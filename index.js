@@ -56,8 +56,8 @@ else {
 // set webhook tergantung pada kondisi development atau production
 if (process.env.NODE_ENV === 'production') {
   const port = process.env.PORT || 3000;
-  app.use(bot.webhookCallback('/' + process.env.BOT_TOKEN));
-  bot.telegram.setWebhook(`https:/${process.env.WEBHOOK_DOMAIN}/${process.env.BOT_TOKEN}`);
+  app.use(bot.webhookCallback('/5824625543:AAEslB26tupftKCDQTs0OULDa1uYWxv6XfM'));
+  bot.telegram.setWebhook(`https://test-bot-vercel.vercel.app/5824625543:AAEslB26tupftKCDQTs0OULDa1uYWxv6XfM`);
   app.listen(port, () => {
     console.log(`Server running on port ${port}`);
   });
