@@ -17,7 +17,7 @@ const isProduction: boolean = process.env.NODE_ENV === "production";
 
 
 // Set up your bot webhook URL
-let webhookUrl = 'https://example.com';
+let webhookUrl = '';
 
 // Use ngrok to expose your local server to the internet
 if (!isProduction) {
