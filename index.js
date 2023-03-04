@@ -57,7 +57,7 @@ else {
 if (process.env.NODE_ENV === 'production') {
   const port = process.env.PORT || 3000;
   app.use(bot.webhookCallback('/' + process.env.BOT_TOKEN));
-  bot.telegram.setWebhook(`https://${process.env.WEBHOOK_DOMAIN}/${process.env.BOT_TOKEN}`);
+  bot.telegram.setWebhook(`https:/${process.env.WEBHOOK_DOMAIN}/${process.env.BOT_TOKEN}`);
   app.listen(port, () => {
     console.log(`Server running on port ${port}`);
   });
