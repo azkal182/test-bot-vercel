@@ -28,14 +28,17 @@ if (!isProduction) {
       //authtoken: 'YOUR_NGROK_AUTH_TOKEN',
     });
     console.log(`Webhook URL: ${webhookUrl}`);
-    bot.telegram.setWebhook(`https://${process.env.WEBHOOK_DOMAIN}/bot${process.env.BOT_TOKEN}`)
+    bot.telegram.setWebhook(`${webhookUrl}/bot${process.env.BOT_TOKEN}`)
    console.log(`webhook set ke : ${webhookUrl}/bot${process.env.BOT_TOKEN}`)
   } catch (error) {
     console.error('Error connecting to ngrok', error);
   }
 })();
 } else {
- bot.telegram.setWebhook(`${webhookUrl}/bot${process.env.BOT_TOKEN}`)
+ bot.telegram.setWebhook(`https://${process.env.WEBHOOK_DOMAIN}/bot${process.env.BOT_TOKEN}`)
+ 
+ console.log(`webhook set ke : https://${process.env.WEBHOOK_DOMAIN}/bot${process.env.BOT_TOKEN}`)
+ 
 }
 
 // Handle incoming updates from Telegram
